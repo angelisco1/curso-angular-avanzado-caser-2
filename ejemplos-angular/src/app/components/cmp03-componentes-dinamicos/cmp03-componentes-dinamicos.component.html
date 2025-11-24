@@ -1,0 +1,14 @@
+<h2>Tema 3: Componentes dinámicos</h2>
+
+<app-modal #modal>
+  <ng-template appHost></ng-template>
+</app-modal>
+
+<ul>
+  @for (recurso of listaArchivos; track recurso.id) {
+    <li>
+      {{recurso.nombre}}
+      <button type="button" (click)="verRecurso(recurso)">Ver recurso</button>
+    </li>
+  }
+</ul>

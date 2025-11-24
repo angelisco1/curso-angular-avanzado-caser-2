@@ -1,0 +1,9 @@
+@if (!isHidden) {
+  <div class="backdrop" (click)="ocultar()">
+    <div id="modal" (click)="$event.stopPropagation()">
+      <button type="button" (click)="ocultar()">Cerrar</button>
+      <br />
+      <ng-content></ng-content>
+    </div>
+  </div>
+}
