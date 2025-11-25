@@ -9,7 +9,11 @@ import { ModalComponent } from "./modal/modal.component";
   styleUrl: './cmp02-viewchild.component.css'
 })
 export class Cmp02ViewchildComponent {
-  @ViewChild('modal') modalCmp!: ModalComponent
+  @ViewChild(ModalComponent) modalCmp!: ModalComponent
+
+  // ngAfterViewInit() {
+  //   console.log(this.modalCmp.isHidden)
+  // }
 
   mostrarModal() {
     this.modalCmp.mostrar()
