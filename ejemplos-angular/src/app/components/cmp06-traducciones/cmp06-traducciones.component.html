@@ -1,0 +1,13 @@
+<h2>Tema 06: Traducciones con ngx-translate</h2>
+
+<select (change)="setLanguage($event)" [value]="selectedLang">
+  <option value="es">ES</option>
+  <option value="en">EN</option>
+  <option value="it">IT</option>
+</select>
+
+<p>El lenguaje seleccionado es: {{selectedLang}}</p>
+
+<p>{{hola | translate}}</p>
+<p>{{hola2}}</p>
+<p>{{'adios_mundo' | translate}}</p>
