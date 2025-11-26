@@ -1,4 +1,5 @@
 {
   "hola_mundo": "Hello world",
-  "adios_mundo": "Bye bye world"
+  "adios_mundo": "Bye bye world",
+  "bienvenida": "Welcome {{nombre}}. You have some notifications."
 }
