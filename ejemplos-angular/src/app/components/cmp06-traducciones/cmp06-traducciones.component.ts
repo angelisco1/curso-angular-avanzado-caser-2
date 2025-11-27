@@ -1,3 +1,4 @@
+import { CurrencyPipe, DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
@@ -5,7 +6,9 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
   selector: 'app-cmp06-traducciones',
   standalone: true,
   imports: [
-    TranslatePipe
+    TranslatePipe,
+    CurrencyPipe,
+    DatePipe,
   ],
   templateUrl: './cmp06-traducciones.component.html',
   styleUrl: './cmp06-traducciones.component.css'
@@ -15,6 +18,8 @@ export class Cmp06TraduccionesComponent {
   hola2: string = ''
   selectedLang: string = 'es'
 
+  precio: number = 19.95
+  fecha: Date = new Date(2024, 10, 2)
 
   constructor(
     private translateService: TranslateService,
@@ -23,13 +28,15 @@ export class Cmp06TraduccionesComponent {
     this.translateService.use(this.selectedLang)
     // this.translateService.getFallbackLang()
 
-    this.hola2 = this.translateService.instant('hola_mundo')
+    this.translateService.stream('hola_mundo')
+      .subscribe((translation) => {
+        this.hola2 = translation
+      })
   }
 
   setLanguage(event: Event) {
     this.selectedLang = (event.target as HTMLSelectElement).value
     this.translateService.use(this.selectedLang)
-    this.hola2 = this.translateService.instant('hola_mundo')
   }
 
 }

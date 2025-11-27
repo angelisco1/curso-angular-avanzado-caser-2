@@ -1,5 +1,1 @@
-{
-  "hola_mundo": "Hola mundo",
-  "adios_mundo": "Adios mundo",
-  "bienvenida": "Bienvenido {{nombre}}. Tienes nuevas notificaciones."
-}
+{"adios_mundo":"Adios mundo","bienvenida":"Bienvenido {{nombre}} {{apellido}}. Tienes nuevas notificaciones.","fecha":"Fecha","hola_mundo":"Hola mundo","patatas":"Patatas","precio":"Precio","sin_traduccion":"SIN TRADUCCIÓN"}

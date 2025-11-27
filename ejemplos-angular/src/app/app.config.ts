@@ -4,8 +4,17 @@ import { provideRouter } from '@angular/router';
 import { misRutas, routes } from './app.routes';
 import { provideMisRutas } from './components/cmp04-componentes-dinamicos-router/mi-router.provider';
 import { provideHttpClient } from '@angular/common/http';
-import { provideTranslateService } from '@ngx-translate/core'
+import { MissingTranslationHandler, MissingTranslationHandlerParams, provideTranslateService, StrictTranslation } from '@ngx-translate/core'
 import { provideTranslateHttpLoader } from '@ngx-translate/http-loader'
+import { Observable } from 'rxjs';
+
+
+class NoTranslationHandler extends MissingTranslationHandler {
+  override handle(params: MissingTranslationHandlerParams): StrictTranslation | Observable<StrictTranslation> {
+    return params.translateService.get('sin_traduccion')
+  }
+}
+
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -18,7 +27,11 @@ export const appConfig: ApplicationConfig = {
         prefix: './i18n/',
         suffix: '.json'
       }),
-      fallbackLang: 'es'
+      fallbackLang: 'es',
+      missingTranslationHandler: {
+        provide: MissingTranslationHandler,
+        useClass: NoTranslationHandler
+      }
     })
   ]
 };

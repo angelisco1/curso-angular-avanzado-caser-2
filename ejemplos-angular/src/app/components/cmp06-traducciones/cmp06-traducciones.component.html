@@ -11,3 +11,12 @@
 <p>{{hola | translate}}</p>
 <p>{{hola2}}</p>
 <p>{{'adios_mundo' | translate}}</p>
+
+<p>{{'bienvenida' | translate:{nombre: "Charly", apellido: "Falco"} }}</p>
+
+
+<!-- LOS PIPES NO DEPENDEN DE LA LIBRERÍA DE NGX-TRANSLATE, SOLO DE REGISTRAR LOS LOCALES (mirar en el main.ts) -->
+<p>{{'precio' | translate}}: {{precio | currency:'EUR':'symbol':undefined:selectedLang}}</p>
+<p>{{'fecha' | translate}}: {{fecha | date:'dd MMMM yyyy':undefined:selectedLang}}</p>
+
+<p>{{'no_existe' | translate}}</p>

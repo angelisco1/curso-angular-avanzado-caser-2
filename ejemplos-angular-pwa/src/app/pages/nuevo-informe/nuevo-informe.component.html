@@ -1,0 +1,17 @@
+<h2>Crear informe</h2>
+
+<form [formGroup]="form" (ngSubmit)="guardar()">
+
+  <div>
+    <label for="titulo">Título:</label>
+    <input type="text" id="titulo" formControlName="titulo">
+  </div>
+
+  <div>
+    <label for="contenido">Contenido:</label>
+    <textarea id="contenido" formControlName="contenido"></textarea>
+  </div>
+
+  <button type="submit" [disabled]="form.invalid">Crear</button>
+
+</form>

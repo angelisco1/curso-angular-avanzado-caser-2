@@ -1,0 +1,10 @@
+<h2>Informes</h2>
+
+<div>
+  @for (informe of informes$ | async; track $index) {
+    <div>
+      <h3>{{informe.titulo}}</h3>
+      <p>{{informe.contenido}}</p>
+    </div>
+  }
+</div>
