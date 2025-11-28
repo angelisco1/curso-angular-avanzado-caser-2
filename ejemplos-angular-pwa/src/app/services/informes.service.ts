@@ -44,6 +44,7 @@ export class InformesService {
   }
 
   createInforme(informe: any) {
-    return this.http.post(this.URL, informe)
+    // return this.http.post(this.URL, informe)
+    return this.http.post('http://localhost:3000/informes', informe)
   }
 }

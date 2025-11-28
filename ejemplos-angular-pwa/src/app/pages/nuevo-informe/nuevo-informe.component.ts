@@ -3,6 +3,8 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { InformesService } from '../../services/informes.service';
 import { Router } from '@angular/router';
 
+declare var Swal: any
+
 @Component({
   selector: 'app-nuevo-informe',
   standalone: true,
@@ -35,13 +37,15 @@ export class NuevoInformeComponent {
       .subscribe((datos: any) => {
         console.log(datos)
 
-        // mostrarModal()
-        //   .then(() => {
-        //     this.router.navigateByUrl('/')
-        //   })
-
-        this.router.navigateByUrl('/')
-
+        Swal.fire({
+          title: 'Success!',
+          text: 'Se ha creado el informe correctamente.',
+          icon: 'success',
+          confirmButtonText: 'Ir a inicio'
+        })
+          .then(() => {
+            this.router.navigateByUrl('/')
+          })
       })
 
     // this.informesService.createInforme(nuevoInforme)

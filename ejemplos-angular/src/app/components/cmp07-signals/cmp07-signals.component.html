@@ -1,0 +1,14 @@
+<h2>Tema 07: Signals</h2>
+
+<input type="text" [value]="filtro()" (input)="setFiltro($event)">
+
+<p>Estamos filtrando por: {{filtro()}}</p>
+<p>Hay un total de {{totalCocktails()}} cocktails que cumplen con el filtro.</p>
+
+<ul>
+  @for (cocktail of cocktails(); track cocktail.idDrink) {
+    <li>{{cocktail.strDrink}}</li>
+  } @empty {
+    <li>No se han encontrado cocktails.</li>
+  }
+</ul>

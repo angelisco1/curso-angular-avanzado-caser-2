@@ -26,5 +26,18 @@
         ]
       }
     }
+  ],
+  "dataGroups": [
+    {
+      "name": "informes",
+      "urls": [
+        "https://proyecto-ejemplo-cd33f.firebaseio.com/curso-angular-avanzado-2/angel/informes"
+      ],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxAge": "1m",
+        "maxSize": 10
+      }
+    }
   ]
 }

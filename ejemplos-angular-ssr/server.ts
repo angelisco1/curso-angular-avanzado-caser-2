@@ -19,7 +19,7 @@ export function app(): express.Express {
   server.set('views', browserDistFolder);
 
   // Example Express Rest API endpoints
-  server.get('/api/informes', apiRouter);
+  server.use('/api', apiRouter);
 
 
   // Serve static files from /browser

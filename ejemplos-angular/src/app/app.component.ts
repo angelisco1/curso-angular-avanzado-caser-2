@@ -6,6 +6,7 @@ import { Cmp03ComponentesDinamicosComponent } from "./components/cmp03-component
 import { Cmp04ComponentesDinamicosRouterComponent } from "./components/cmp04-componentes-dinamicos-router/cmp04-componentes-dinamicos-router.component";
 import { Cmp05LazyLoadingComponent } from "./components/cmp05-lazy-loading/cmp05-lazy-loading.component";
 import { Cmp06TraduccionesComponent } from "./components/cmp06-traducciones/cmp06-traducciones.component";
+import { Cmp07SignalsComponent } from "./components/cmp07-signals/cmp07-signals.component";
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ import { Cmp06TraduccionesComponent } from "./components/cmp06-traducciones/cmp0
     Cmp03ComponentesDinamicosComponent,
     Cmp04ComponentesDinamicosRouterComponent,
     Cmp05LazyLoadingComponent,
-    Cmp06TraduccionesComponent
+    Cmp06TraduccionesComponent,
+    Cmp07SignalsComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
